@@ -1,0 +1,371 @@
+/* Reset the box-sizing property for the entire document */
+html {
+    box-sizing: border-box;
+}
+
+/* Inherit box-sizing for all elements and their pseudo-elements */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Define custom properties */
+:root {
+    --clr-primary-700: #05445e;
+    /* Dark primary color */
+    --clr-primary-400: #189ab4;
+    /* Medium primary color */
+    --clr-primary-300: #75e6da;
+    /* Light primary color */
+    --clr-primary-100: #d4f1f4;
+    /* Lightest primary color */
+    --clr-body: #000000;
+    /* Body text color */
+    --ff-body: 'Raleway', sans-serif;
+    /* Font family for body text */
+
+    /* Spacing variables */
+    --space-1: 10px;
+    --space-2: 20px;
+    --space-3: 30px;
+    --space-4: 40px;
+}
+
+/* Font sizes for headings using the clamp function for responsiveness */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+h5,
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Reset padding and remove list style for unordered lists */
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Body styling */
+body {
+    font-family: var(--ff-body);
+    /* Use the defined font family */
+    margin: 0;
+    /* Remove default margin */
+    background-color: var(--clr-primary-100);
+    /* Light background color */
+    /* background: var(--clr-primary-700); Commented out darker background */
+}
+
+/* Header styling */
+.header {
+    background-color: var(--clr-primary-700);
+    /* Dark background color */
+    color: white;
+    /* White text color */
+    padding: var(--space-2);
+    /* Padding */
+    display: flex;
+    /* Flexbox for layout */
+    justify-content: space-between;
+    /* Space between elements */
+    align-items: center;
+    /* Center items vertically */
+}
+
+/* Styling for user image and ID section within header */
+header .header .User-Img-And-Id {
+    display: flex;
+    /* Flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+/* Header image styling */
+.header img {
+    width: 40px;
+    /* Width */
+    height: 40px;
+    /* Height */
+    border-radius: 50%;
+    /* Round image */
+}
+
+/* Menu icon styling within header */
+.header .menu-icon {
+    display: flex;
+    /* Flexbox for layout */
+    align-items: center;
+    /* Center items vertically */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+/* Adjust margin for menu icon images */
+.menu-icon img {
+    margin-right: var(--space-2);
+    /* Right margin */
+}
+
+/* Styling for the three lines menu icon */
+.menu-icon .Three-Lines {
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    display: inline-block;
+    /* Inline-block display */
+    width: 24px;
+    /* Width */
+    height: 18px;
+    /* Height */
+    position: relative;
+    /* Relative positioning for child elements */
+}
+
+/* Styling for each line in the three lines menu icon */
+.menu-icon .Three-Lines span {
+    background-color: white;
+    /* White background color */
+    border-radius: 10px;
+    /* Rounded corners */
+    display: block;
+    /* Block display */
+    height: 3px;
+    /* Height */
+    width: 100%;
+    /* Full width */
+    position: absolute;
+    /* Absolute positioning */
+    left: 0;
+    /* Align left */
+}
+
+/* Position the first line at the top */
+.menu-icon .Three-Lines span:nth-child(1) {
+    top: 0;
+}
+
+/* Position the second line in the middle */
+.menu-icon .Three-Lines span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    /* Center vertically */
+}
+
+/* Position the third line at the bottom */
+.menu-icon .Three-Lines span:nth-child(3) {
+    top: 100%;
+    transform: translateY(-100%);
+    /* Bottom align */
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 200px;
+    /* Width */
+    background-color: var(--clr-primary-300);
+    /* Light background color */
+    position: fixed;
+    /* Fixed position */
+    height: 100%;
+    /* Full height */
+    padding-top: var(--space-2);
+    /* Top padding */
+}
+
+/* Sidebar link styling */
+.sidebar a {
+    display: block;
+    /* Block display */
+    color: var(--clr-body);
+    /* Text color */
+    padding: var(--space-2);
+    /* Padding */
+    text-decoration: none;
+    /* No underline */
+}
+
+/* Sidebar images styling */
+.sidebar div.sidebar-images img.sidebar-icons {
+    width: 20%;
+    /* Width */
+    height: 20%;
+    /* Height */
+}
+
+/* Layout for sidebar images */
+.sidebar div.sidebar-images {
+    display: flex;
+    /* Flexbox for layout */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+/* Active link styling in sidebar */
+.sidebar a.active {
+    background-color: var(--clr-primary-700);
+    /* Dark background color */
+    color: white;
+    /* White text color */
+}
+
+/* Hover effect for sidebar links */
+.sidebar a:hover:not(.active) {
+    background-color: var(--clr-primary-400);
+    /* Medium background color */
+    color: white;
+    /* White text color */
+}
+
+/* Main content area styling */
+.main-content {
+    margin-left: 210px;
+    /* Left margin to accommodate sidebar */
+    padding: var(--space-2);
+    /* Padding */
+}
+
+/* Course card styling */
+.course-card {
+    display: inline-block;
+    /* Inline-block display */
+    background-color: var(--clr-primary-300);
+    /* Light background color */
+    width: 200px;
+    /* Width */
+    margin: var(--space-1);
+    /* Margin */
+    padding: var(--space-2);
+    /* Padding */
+    border-radius: var(--space-1);
+    /* Rounded corners */
+    text-align: center;
+    /* Center text */
+}
+
+/* Course card image styling */
+.course-card img {
+    width: 100px;
+    /* Width */
+    height: 100px;
+    /* Height */
+}
+
+/* Course title styling */
+.course-title {
+    font-weight: bold;
+    /* Bold text */
+    margin-top: var(--space-1);
+    /* Top margin */
+}
+
+/* Primary button styling */
+.btn-primary {
+    display: inline-block;
+    /* Inline-block display */
+    padding: var(--space-1) var(--space-2);
+    /* Padding */
+    color: white;
+    /* White text color */
+    background-color: var(--clr-primary-400);
+    /* Medium background color */
+    border: none;
+    /* No border */
+    border-radius: var(--space-1);
+    /* Rounded corners */
+    text-align: center;
+    /* Center text */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    text-decoration: none;
+    /* No underline */
+}
+
+button {
+    background-color: var(--clr-primary-400);
+    border-radius: 15px;
+    width: 20%;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#openModal {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--clr-primary-700);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    align-items: start;
+    border-radius: 10px;
+}
+
+#searchInput {
+    border-radius: 10px;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: var(--clr-primary-400);
+    color: #fff;
+}
+
+#searchInput::placeholder {
+    color: var(--clr-primary-100);
+}
+
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+    background-color: var(--clr-primary-700);
+    /* Dark background color */
+}
+
+.modal {
+    transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
+}

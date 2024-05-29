@@ -1,0 +1,368 @@
+/* Reset */
+html {
+    box-sizing: border-box;
+    /* Set box-sizing model to border-box for the document */
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    /* Inherit the box-sizing model from the html element */
+}
+
+/* CSS Variables */
+:root {
+    --clr-primary-700: #05445e;
+    /* Dark primary color */
+    --clr-primary-400: #189ab4;
+    /* Medium primary color */
+    --clr-primary-300: #75e6da;
+    /* Light primary color */
+    --clr-primary-100: #d4f1f4;
+    /* Very light primary color */
+    --clr-body: #000000;
+    /* Body text color */
+    --ff-body: 'Raleway', sans-serif;
+    /* Main font family */
+
+    /* Spaces */
+    --space-1: 10px;
+    /* Small space */
+    --space-2: 20px;
+    /* Medium space */
+    --space-3: 30px;
+    /* Large space */
+    --space-4: 40px;
+    /* Extra-large space */
+}
+
+/* Responsive font sizes */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+    /* Responsive font size for h1 */
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    /* Responsive font size for h2 */
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    /* Responsive font size for h3 */
+}
+
+h4 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    /* Responsive font size for h4 */
+}
+
+h5,
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    /* Responsive font size for h5 and p */
+}
+
+/* Remove padding and list style for unordered lists */
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Body styles */
+body {
+    font-family: var(--ff-body);
+    /* Set font family */
+    margin: 0;
+    /* Remove default margin */
+    background-color: var(--clr-primary-100);
+    /* Set background color */
+    /* background: var(--clr-primary-700); */
+}
+
+/* Header styles */
+.header {
+    background-color: var(--clr-primary-700);
+    /* Background color for header */
+    color: white;
+    /* Text color for header */
+    padding: var(--space-2);
+    /* Padding for header */
+    display: flex;
+    /* Use flexbox for layout */
+    justify-content: space-between;
+    /* Space out content */
+    align-items: center;
+    /* Center align items vertically */
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 40%;
+    /* Width */
+    padding: var(--space-1);
+    /* Padding */
+    margin: var(--space-1) 0;
+    /* Margin */
+    border-radius: var(--space-1);
+    /* Rounded corners */
+    border: 1px solid #ccc;
+    /* Border */
+}
+
+header .header .User-Img-And-Id {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Center align items vertically */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+/* Header image styles */
+.header img {
+    width: 40px;
+    /* Set width */
+    height: 40px;
+    /* Set height */
+    border-radius: 50%;
+    /* Make image round */
+}
+
+/* Menu icon styles */
+.header .menu-icon {
+    display: flex;
+    /* Use flexbox for layout */
+    align-items: center;
+    /* Center align items vertically */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+.menu-icon img {
+    margin-right: var(--space-2);
+    /* Margin to the right of the image */
+}
+
+.menu-icon .Three-Lines {
+    cursor: pointer;
+    /* Change cursor to pointer */
+    display: inline-block;
+    /* Display as inline-block */
+    width: 24px;
+    /* Set width */
+    height: 18px;
+    /* Set height */
+    position: relative;
+    /* Position relative */
+}
+
+/* Three lines for menu icon */
+.menu-icon .Three-Lines span {
+    background-color: white;
+    /* Background color for lines */
+    border-radius: 10px;
+    /* Rounded corners */
+    display: block;
+    /* Display as block */
+    height: 3px;
+    /* Set height */
+    width: 100%;
+    /* Set width */
+    position: absolute;
+    /* Position absolute */
+    left: 0;
+    /* Align to the left */
+}
+
+.menu-icon .Three-Lines span:nth-child(1) {
+    top: 0;
+    /* Position at the top */
+}
+
+.menu-icon .Three-Lines span:nth-child(2) {
+    top: 50%;
+    /* Position in the middle */
+    transform: translateY(-50%);
+    /* Center vertically */
+}
+
+.menu-icon .Three-Lines span:nth-child(3) {
+    top: 100%;
+    /* Position at the bottom */
+    transform: translateY(-100%);
+    /* Align to the bottom */
+}
+
+/* Sidebar styles */
+.sidebar {
+    width: 200px;
+    /* Set width */
+    background-color: var(--clr-primary-300);
+    /* Background color */
+    position: fixed;
+    /* Fix position */
+    height: 100%;
+    /* Full height */
+    padding-top: var(--space-2);
+    /* Top padding */
+}
+
+/* Sidebar link styles */
+.sidebar a {
+    display: block;
+    /* Display as block */
+    color: var(--clr-body);
+    /* Text color */
+    padding: var(--space-2);
+    /* Padding */
+    text-decoration: none;
+    /* Remove underline */
+}
+
+.sidebar div.sidebar-images img.sidebar-icons {
+    width: 20%;
+    /* Set width */
+    height: 20%;
+    /* Set height */
+}
+
+.sidebar div.sidebar-images {
+    display: flex;
+    /* Use flexbox for layout */
+    gap: var(--space-2);
+    /* Space between items */
+}
+
+/* Active link styles */
+.sidebar a.active {
+    background-color: var(--clr-primary-700);
+    /* Background color */
+    color: white;
+    /* Text color */
+}
+
+/* Hover effect for sidebar links */
+.sidebar a:hover:not(.active) {
+    background-color: var(--clr-primary-400);
+    /* Background color on hover */
+    color: white;
+    /* Text color on hover */
+}
+
+/* Main content styles */
+.main-content {
+    margin-left: 210px;
+    /* Margin to accommodate sidebar */
+    padding: var(--space-2);
+    /* Padding */
+}
+
+/* Course card styling */
+.course-card {
+    display: inline-block;
+    /* Display as inline-block */
+    background-color: var(--clr-primary-300);
+    /* Light background color */
+    width: 200px;
+    /* Set width */
+    margin: var(--space-1);
+    /* Margin */
+    padding: var(--space-2);
+    /* Padding */
+    border-radius: var(--space-1);
+    /* Rounded corners */
+    text-align: center;
+    /* Center text */
+}
+
+/* Course card image styling */
+.course-card img {
+    width: 100px;
+    /* Set width */
+    height: 100px;
+    /* Set height */
+}
+
+/* Course title styling */
+.course-title {
+    font-weight: bold;
+    /* Bold text */
+    margin-top: var(--space-1);
+    /* Top margin */
+}
+
+button {
+    background-color: var(--clr-primary-400);
+    border-radius: 15px;
+    width: 20%;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#openModal {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--clr-primary-700);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    align-items: start;
+    border-radius: 10px;
+}
+
+#searchInput {
+    border-radius: 10px;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: var(--clr-primary-400);
+    color: #fff;
+}
+
+#searchInput::placeholder {
+    color: var(--clr-primary-100);
+}
+
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+    background-color: var(--clr-primary-700);
+    /* Dark background color */
+}
+
+.modal {
+    transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
+}

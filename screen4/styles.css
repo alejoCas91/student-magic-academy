@@ -1,0 +1,334 @@
+/* Reset */
+html {
+    /* Set box-sizing to border-box for the entire document */
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    /* Inherit box-sizing from the html element */
+    box-sizing: inherit;
+}
+
+:root {
+    /* Define color variables for the primary color scheme */
+    --clr-primary-700: #05445e;
+    --clr-primary-400: #189ab4;
+    --clr-primary-300: #75e6da;
+    --clr-primary-100: #d4f1f4;
+    --clr-body: #000000;
+    /* Define font family variable */
+    --ff-body: 'Raleway', sans-serif;
+
+    /* Define spacing variables */
+    --space-1: 10px;
+    --space-2: 20px;
+    --space-3: 30px;
+    --space-4: 40px;
+}
+
+/* Responsive typography using clamp */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 3.6rem);
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+}
+
+h5,
+p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+/* Remove default padding and list style from unordered lists */
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* Container styling for centered content */
+.container {
+    margin: 0 auto;
+    width: 1400px;
+    max-width: 90%;
+}
+
+body {
+    /* Set font family and reset margin */
+    font-family: var(--ff-body);
+    margin: 0;
+    /* Set background color */
+    background-color: var(--clr-primary-100);
+    /* background: var(--clr-primary-700); */
+}
+
+.header {
+    /* Header styling with primary color and white text */
+    background-color: var(--clr-primary-700);
+    color: white;
+    padding: var(--space-2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Flex container for user image and ID in header */
+header .header .User-Img-And-Id {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Styling for header images */
+.header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.header .menu-icon {
+    /* Flex container for menu icon */
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+/* Additional margin for menu icon image */
+.menu-icon img {
+    margin-right: var(--space-2);
+}
+
+.menu-icon .Three-Lines {
+    /* Styling for the three-line menu icon */
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    height: 18px;
+    position: relative;
+}
+
+/* Styling for individual lines in the three-line menu icon */
+.menu-icon .Three-Lines span {
+    background-color: white;
+    border-radius: 10px;
+    display: block;
+    height: 3px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+}
+
+/* Positioning each line in the menu icon */
+.menu-icon .Three-Lines span:nth-child(1) {
+    top: 0;
+}
+
+.menu-icon .Three-Lines span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-icon .Three-Lines span:nth-child(3) {
+    top: 100%;
+    transform: translateY(-100%);
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 200px;
+    background-color: var(--clr-primary-300);
+    position: fixed;
+    height: 150%;
+    padding-top: var(--space-2);
+}
+
+/* Sidebar links styling */
+.sidebar a {
+    display: block;
+    color: var(--clr-body);
+    padding: var(--space-2);
+    text-decoration: none;
+}
+
+/* Sidebar icons styling */
+.sidebar div.sidebar-images img.sidebar-icons {
+    width: 20%;
+    height: 20%;
+}
+
+/* Flex container for sidebar images */
+.sidebar div.sidebar-images {
+    display: flex;
+    gap: var(--space-2);
+}
+
+/* Active link styling in sidebar */
+.sidebar a.active {
+    background-color: var(--clr-primary-700);
+    color: white;
+}
+
+/* Hover effect for non-active sidebar links */
+.sidebar a:hover:not(.active) {
+    background-color: var(--clr-primary-400);
+    color: white;
+}
+
+/* Main content area styling */
+.main-content-Bar {
+    margin-left: 210px;
+    /* Offset for sidebar */
+    padding: var(--space-2);
+    /* Padding */
+}
+
+/* Search bar styling */
+.search-bar {
+    width: 40%;
+    padding: var(--space-1);
+    margin: var(--space-1) 0;
+    border-radius: var(--space-1);
+    border: 1px solid #ccc;
+}
+
+/* Individual course card styling */
+.course {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Course progress bar container */
+.course-progress {
+    width: 70%;
+}
+
+.course-progress-bar {
+    width: 85%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    display: flex;
+    align-items: end;
+}
+
+
+/* Inner progress bar indicating completion percentage */
+.course-progress-bar-inner {
+    width: 45%;
+    /* Change this value to reflect actual progress */
+    height: 20px;
+    background-color: #2a3f54;
+}
+
+
+.course-details {
+    display: flex;
+    align-items: center;
+}
+
+.course-details span {
+    margin-left: 10px;
+}
+
+/* Button styling */
+.btn-bar {
+    padding: 10px 15px;
+    background-color: #1abc9c;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.btn-bar:hover {
+    background-color: #16a085;
+}
+
+button {
+    background-color: var(--clr-primary-400);
+    border-radius: 15px;
+    width: 20%;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+#openModal {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: var(--clr-primary-700);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 700px;
+    height: 300px;
+    display: flex;
+    align-items: start;
+    border-radius: 10px;
+}
+
+#searchInput {
+    border-radius: 10px;
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    background-color: var(--clr-primary-400);
+    color: #fff;
+}
+
+#searchInput::placeholder {
+    color: var(--clr-primary-100);
+}
+
+
+/* Hover effect for primary button */
+.btn-primary:hover {
+    background-color: var(--clr-primary-700);
+    /* Dark background color */
+}
+
+.modal {
+    transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+    overflow-x: hidden;
+    overflow-y: visible !important;
+}
+
+.small {
+    width: 20px;
+    height: 20px;
+}
